@@ -1,0 +1,106 @@
+html {
+    box-sizing: border-box;
+}
+
+/* */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* max width container*/
+.content-container {
+    max-width: 1000px;
+}
+
+.image-container {
+    max-width: 600px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white url(../img/background_texture.jpg) repeat;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: #888;
+}
+
+h1, h2, h3 {
+    font-family: 'Bitter', serif;
+}
+
+h1 {
+    color: #4f7161;
+}
+
+h2, h3 {
+    color: #c81e21;
+}
+
+#container {
+    background-image: url("img/background_texture.jpg") repeat;
+}
+
+/* ------------------------------------------------------ Header ---- */
+
+header, #page {
+    margin: 0px auto;
+    padding: 0px 0px;
+}
+
+#logo {
+    background: #4f7161 url(../img/header_background.jpg) repeat;
+}
+
+#logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+@@media all and (min-width: 400px) {
+    #logo img {
+        width: 50%;
+    }
+}
+
+/* ------------------------------------------------------ Nav ---- */
+
+nav {
+    background: #c81e21;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------ Nav ---- */
+
+article img {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------------------------ Footer ---- */
+
+footer {
+    background-color: #c81e21;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+}
