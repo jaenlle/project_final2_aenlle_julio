@@ -2,18 +2,15 @@ html {
     box-sizing: border-box;
 }
 
-/* */
-*, *:before, *:after {
-    box-sizing: inherit;
+/* this is for customized highlighting effect */
+::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: #66c999;
 }
 
-/* max width container*/
-.content-container {
-    max-width: 1000px;
-}
-
-.image-container {
-    max-width: 600px;
+::selection {
+    color: white;
+    background: #66c999;
 }
 
 body {
@@ -21,32 +18,83 @@ body {
     padding: 0;
     background: white url(../img/background_texture.jpg) repeat;
     font-family: 'Raleway', sans-serif;
-    font-size: 16px;
     color: #888;
 }
 
-h1, h2, h3 {
+h1, a, button {
     font-family: 'Bitter', serif;
 }
 
 h1 {
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
     color: #4f7161;
+    text-transform: uppercase;
 }
 
-h2, h3 {
-    color: #c81e21;
+h2 {
+    color: #6b887a;
 }
 
-#container {
-    background-image: url("img/background_texture.jpg") repeat;
+a {
+    margin-top: 20px;
 }
 
-/* ------------------------------------------------------ Header ---- */
-
-header, #page {
-    margin: 0px auto;
-    padding: 0px 0px;
+button {
+    display: block;
+    color: white;
+    background: #6b887a;
+    border-radius: 4px;
+    border: 2px solid #6b887a;
+    padding: 4px 8px;
+    margin-top: 20px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
 }
+
+button:hover {
+    color: white;
+    background: #66c999;
+    border: none;
+    padding: 6px 10px;
+}
+
+button:active {
+    color: white;
+    background: #c81e21;
+    border: none;
+    padding: 6px 10px;
+}
+
+/* Eliminates the blue "outline" that appears by browser default when clicking a button*/
+button:focus {
+    outline:0;
+}
+
+
+/* ------------------------------------------------------ Max width containers ---- */
+
+.hf-container { /* header & footer container */
+    max-width: 1600px;
+}
+
+.content-container { /* main content container */
+    max-width: 1000px;
+}
+
+.image-container { /* image container */
+    max-width: 600px;
+}
+
+/* ------------------------------------------------------ Main Elements ---- */
+
+header, nav, footer, #page {
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* ------------------------------------------------------ Logo ---- */
 
 #logo {
     background: #4f7161 url(../img/header_background.jpg) repeat;
@@ -55,35 +103,82 @@ header, #page {
 #logo img {
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    padding: 8px 0px;
 }
 
-@@media all and (min-width: 400px) {
-    #logo img {
+/* ------------------------------------------------------ Navigation ---- */
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0px 0px;
+}
+
+nav a{
+    display: block;
+    text-decoration: none;
+    line-height: 60px;
+    padding: 10px 20px;
+    font-family: 'Bitter', serif;
+    font-size: 1.8em;
+    color: #c81e21;
+}
+
+nav a:hover {
+    color: white;
+    background-color: #c81e21;
+}
+
+/* makes nav buttons bunch up when window is at minimum width set */
+@media all and (min-width: 500px) {
+    nav li {
+        display: inline-block;
         width: 50%;
     }
 }
 
-/* ------------------------------------------------------ Nav ---- */
+/* makes nav buttons space themselves out when window is at minimum width set */
+@media all and (min-width: 800px) {
+    nav li {
+        display: inline-block;
+        width: calc(100%/4);
+    }
 
-nav {
-    background: #c81e21;
 }
 
-nav ul {
-    list-style: none;
+
+/* ------------------------------------------------------ Body Content ---- */
+
+#page h1, #page h2, #page h3, #page p, #page a, #page a:hover {
+    padding: 0px 8px;
+}
+#page p {
+    text-align: justify;
+    font-size: .9em;
+    line-height: 160%;
+    text-shadow: 1px 1px rgba(158, 158, 158, 0.36)
 }
 
-nav ul li a {
+#paga a, #page a:hover {
+    text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+#page a {
+    font-size: 1.2em;
+    color: #66c999;
     text-decoration: none;
 }
 
-nav ul li a:hover {
-    color: white;
-    text-decoration: none;
-}
+#page a:hover {
+    color: #c81e21;
+    border-bottom: 2px solid #c81e21;
+    padding: 0px 0px 1px 8px;
 
-/* ------------------------------------------------------ Nav ---- */
+}
 
 article img {
     width: 100%;
@@ -102,5 +197,6 @@ footer {
 }
 
 footer p {
+    text-align: center;
     color: white;
 }
